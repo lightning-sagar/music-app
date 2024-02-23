@@ -1,0 +1,48 @@
+<style>
+    .head {
+        position: sticky;
+        display: flex;
+        flex-direction: row;
+        width: 75%;
+        position: absolute;
+        top: 15px;
+        align-items: center;
+        border-radius: 7px;
+        right: 10px;
+        left: 350px;
+        color: #fff;
+        background: rgb(7, 7, 7);
+        height: 10%;
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+
+    .head div {
+        margin: 0 10px;
+        cursor: pointer;
+    }
+
+    .in a,
+    .up a,
+    .out a {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+
+<div class="head">
+    <% if(!currentUser){ %>
+        <div class="in">
+            <a href="/login">login</a>
+        </div>
+        <div class="up">
+            <a href="/Signin">Signin</a>
+        </div>
+    <% } %>
+    <% if(currentUser){ %>
+        <h2>Welcome, <%= currentUser.username %></h2>
+      <div class="out">
+          <a href="/logout">logout</a>
+      </div>
+    <% } %>
+</div>
